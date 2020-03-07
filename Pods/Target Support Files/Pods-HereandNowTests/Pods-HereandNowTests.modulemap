@@ -1,0 +1,6 @@
+framework module Pods_HereandNowTests {
+  umbrella header "Pods-HereandNowTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
