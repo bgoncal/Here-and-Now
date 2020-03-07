@@ -28,6 +28,13 @@
 		CF9A91A82414294E00F7CB9C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91A72414294E00F7CB9C /* HomeViewModel.swift */; };
 		CF9A91AA2414296500F7CB9C /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91A92414296500F7CB9C /* HomeAssembly.swift */; };
 		CF9A91AC241429A600F7CB9C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91AB241429A600F7CB9C /* HomeCoordinator.swift */; };
+		CF9A91B02414427E00F7CB9C /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91AE2414427E00F7CB9C /* PlaceTableViewCell.swift */; };
+		CF9A91B12414427E00F7CB9C /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9A91AF2414427E00F7CB9C /* PlaceTableViewCell.xib */; };
+		CF9A91B32414495300F7CB9C /* GoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B22414495300F7CB9C /* GoogleApiService.swift */; };
+		CF9A91B52414498C00F7CB9C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B42414498C00F7CB9C /* Configuration.swift */; };
+		CF9A91B8241449C100F7CB9C /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF9A91B7241449C100F7CB9C /* Configuration.plist */; };
+		CF9A91BB24144FE500F7CB9C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BA24144FE500F7CB9C /* Places.swift */; };
+		CF9A91BD241454C700F7CB9C /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BC241454C700F7CB9C /* ServicesAssembly.swift */; };
 		E850E3374C0A965129E98C87 /* Pods_HereandNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B342E36F1B6D4147A98EBD55 /* Pods_HereandNow.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +78,13 @@
 		CF9A91A72414294E00F7CB9C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF9A91A92414296500F7CB9C /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		CF9A91AB241429A600F7CB9C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CF9A91AE2414427E00F7CB9C /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		CF9A91AF2414427E00F7CB9C /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		CF9A91B22414495300F7CB9C /* GoogleApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleApiService.swift; sourceTree = "<group>"; };
+		CF9A91B42414498C00F7CB9C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CF9A91B7241449C100F7CB9C /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		CF9A91BA24144FE500F7CB9C /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		CF9A91BC241454C700F7CB9C /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		E699D570D1703FC626456A2B /* Pods-HereandNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereandNowTests.debug.xcconfig"; path = "Target Support Files/Pods-HereandNowTests/Pods-HereandNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +154,7 @@
 				CF9A919524141E4700F7CB9C /* Infrastructure */,
 				CF9A91912414197D00F7CB9C /* Features */,
 				CF9A918B2414120800F7CB9C /* Extensions */,
+				CF9A91B6241449A600F7CB9C /* Resources */,
 				CF9A917224140A6000F7CB9C /* Assets.xcassets */,
 				CF9A916F24140A5D00F7CB9C /* Main.storyboard */,
 				CF9A917424140A6000F7CB9C /* LaunchScreen.storyboard */,
@@ -171,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				CF9A918F2414141600F7CB9C /* LocationService.swift */,
+				CF9A91B22414495300F7CB9C /* GoogleApiService.swift */,
+				CF9A91BC241454C700F7CB9C /* ServicesAssembly.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,9 +217,11 @@
 		CF9A919524141E4700F7CB9C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				CF9A91B924144FD900F7CB9C /* Entities */,
 				CF9A918E2414140800F7CB9C /* Services */,
 				CF9A919624141E5700F7CB9C /* Assembler.swift */,
 				CF9A91A22414269200F7CB9C /* ModuleBuilder.swift */,
+				CF9A91B42414498C00F7CB9C /* Configuration.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -210,12 +229,38 @@
 		CF9A91A42414290900F7CB9C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CF9A91AD2414426800F7CB9C /* Cells */,
 				CF9A91A52414291400F7CB9C /* HomeViewController.swift */,
 				CF9A91A72414294E00F7CB9C /* HomeViewModel.swift */,
 				CF9A91A92414296500F7CB9C /* HomeAssembly.swift */,
 				CF9A91AB241429A600F7CB9C /* HomeCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CF9A91AD2414426800F7CB9C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A91AE2414427E00F7CB9C /* PlaceTableViewCell.swift */,
+				CF9A91AF2414427E00F7CB9C /* PlaceTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CF9A91B6241449A600F7CB9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A91B7241449C100F7CB9C /* Configuration.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CF9A91B924144FD900F7CB9C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A91BA24144FE500F7CB9C /* Places.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +348,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9A917624140A6000F7CB9C /* LaunchScreen.storyboard in Resources */,
+				CF9A91B8241449C100F7CB9C /* Configuration.plist in Resources */,
 				CF9A917324140A6000F7CB9C /* Assets.xcassets in Resources */,
 				CF9A917124140A5D00F7CB9C /* Main.storyboard in Resources */,
+				CF9A91B12414427E00F7CB9C /* PlaceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF9A91BB24144FE500F7CB9C /* Places.swift in Sources */,
 				CF9A91942414199300F7CB9C /* OnboardingViewModel.swift in Sources */,
 				CF9A918D241412C300F7CB9C /* UIView+RoundedCorners.swift in Sources */,
 				CF9A916E24140A5D00F7CB9C /* OnboardingViewController.swift in Sources */,
+				CF9A91B52414498C00F7CB9C /* Configuration.swift in Sources */,
 				CF9A91902414141600F7CB9C /* LocationService.swift in Sources */,
 				CF9A919F2414234000F7CB9C /* UIViewController+Initialize.swift in Sources */,
 				CF9A919B2414207000F7CB9C /* AppCoordinatorAssembly.swift in Sources */,
@@ -397,10 +446,13 @@
 				CF9A91A1241424F500F7CB9C /* OnboardingCoordinator.swift in Sources */,
 				CF9A91A82414294E00F7CB9C /* HomeViewModel.swift in Sources */,
 				CF9A916A24140A5D00F7CB9C /* AppDelegate.swift in Sources */,
+				CF9A91BD241454C700F7CB9C /* ServicesAssembly.swift in Sources */,
 				CF9A919924141F4A00F7CB9C /* AppCoordinator.swift in Sources */,
 				CF9A91AA2414296500F7CB9C /* HomeAssembly.swift in Sources */,
 				CF9A91AC241429A600F7CB9C /* HomeCoordinator.swift in Sources */,
+				CF9A91B32414495300F7CB9C /* GoogleApiService.swift in Sources */,
 				CF9A91A62414291400F7CB9C /* HomeViewController.swift in Sources */,
+				CF9A91B02414427E00F7CB9C /* PlaceTableViewCell.swift in Sources */,
 				CF9A91A32414269200F7CB9C /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

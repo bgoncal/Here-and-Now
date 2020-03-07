@@ -10,6 +10,12 @@ protocol LocationServiceProtocol {
 
 protocol LocationServiceDelegate: class {
   func didChangeAuthorization(approved: Bool)
+  func didUpdateLocations(locations: [Coordinate])
+}
+
+extension LocationServiceDelegate {
+  func didChangeAuthorization(approved: Bool) { }
+  func didUpdateLocations(locations: [Coordinate]) { }
 }
 
 class LocationService: NSObject, LocationServiceProtocol {
@@ -64,7 +70,12 @@ class LocationService: NSObject, LocationServiceProtocol {
 
 extension LocationService: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    print(locations)
+    let coordinates = locations.map { location -> Coordinate in
+      let lat = String(location.coordinate.latitude)
+      let long = String(location.coordinate.longitude)
+      return Coordinate(lat: lat, long: long)
+    }
+    delegate?.didUpdateLocations(locations: coordinates)
   }
 
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

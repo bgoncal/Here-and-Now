@@ -132,32 +132,56 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="118.29085457271366"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="KJA-hA-yhc">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CdW-J9-YfD" customClass="HomeViewController" customModule="HereandNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CdW-J9-YfD" customClass="HomeViewController" customModule="HereandNow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XaJ-Gk-BNI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-fF-PqH">
-                                <rect key="frame" x="164.5" y="323" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-yg-KD4">
+                                <rect key="frame" x="16" y="68" width="343" height="32"/>
+                                <segments>
+                                    <segment title="Bars"/>
+                                    <segment title="Cafes"/>
+                                    <segment title="Restaurants"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectedSegmentChanged:" destination="CdW-J9-YfD" eventType="valueChanged" id="JlR-He-BCR"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zBc-Dt-4oH">
+                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CdW-J9-YfD" id="38s-ba-ZjX"/>
+                                    <outlet property="delegate" destination="CdW-J9-YfD" id="cmb-WQ-2XO"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LyU-fF-PqH" firstAttribute="centerY" secondItem="XaJ-Gk-BNI" secondAttribute="centerY" id="s6D-jL-chh"/>
-                            <constraint firstItem="LyU-fF-PqH" firstAttribute="centerX" secondItem="XaJ-Gk-BNI" secondAttribute="centerX" id="yCi-bl-Nlh"/>
+                            <constraint firstItem="zBc-Dt-4oH" firstAttribute="trailing" secondItem="CpJ-xD-clX" secondAttribute="trailing" id="AFg-sU-hbK"/>
+                            <constraint firstItem="zBc-Dt-4oH" firstAttribute="leading" secondItem="CpJ-xD-clX" secondAttribute="leading" id="DxJ-qc-F3X"/>
+                            <constraint firstItem="zBc-Dt-4oH" firstAttribute="top" secondItem="Q4h-yg-KD4" secondAttribute="bottom" constant="20" id="IRm-f8-ap3"/>
+                            <constraint firstItem="CpJ-xD-clX" firstAttribute="trailing" secondItem="Q4h-yg-KD4" secondAttribute="trailing" constant="16" id="KKx-jV-7bv"/>
+                            <constraint firstItem="zBc-Dt-4oH" firstAttribute="bottom" secondItem="XaJ-Gk-BNI" secondAttribute="bottom" id="Uiy-eB-wik"/>
+                            <constraint firstItem="Q4h-yg-KD4" firstAttribute="leading" secondItem="CpJ-xD-clX" secondAttribute="leading" constant="16" id="Wh8-2g-Ier"/>
+                            <constraint firstItem="Q4h-yg-KD4" firstAttribute="top" secondItem="CpJ-xD-clX" secondAttribute="top" constant="24" id="sEy-OA-yRb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CpJ-xD-clX"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="segments" destination="Q4h-yg-KD4" id="b98-rN-UNY"/>
+                        <outlet property="tableView" destination="zBc-Dt-4oH" id="GXh-Sr-TEj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtA-JD-bep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="118"/>
+            <point key="canvasLocation" x="856.79999999999995" y="117.39130434782609"/>
         </scene>
     </scenes>
     <resources>

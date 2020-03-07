@@ -7,6 +7,9 @@ class HomeAssembly: Assembly {
     container.autoregister(HomeViewModel.self, initializer: HomeViewModel.init)
     container.register(HomeViewController.self) { resolver -> HomeViewController in
       let view: HomeViewController = .initializeOnMainStoryBoard()
+      let viewModel = resolver.resolve(HomeViewModel.self)!
+      viewModel.view = view
+      view.viewModel = viewModel
       return view
     }
   }
