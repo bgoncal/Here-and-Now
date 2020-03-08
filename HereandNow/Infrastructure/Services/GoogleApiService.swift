@@ -13,6 +13,17 @@ enum PlaceType: String {
   case restaurant
   case bar
   case cafe
+
+  var readableValue: String {
+    switch self {
+    case .bar:
+      return "Bar"
+    case .cafe:
+      return "Cafes"
+    case .restaurant:
+      return "Restaurants"
+    }
+  }
 }
 
 protocol GoogleApiServiceProtocol {
@@ -49,8 +60,14 @@ class GoogleApiService: GoogleApiServiceProtocol {
         }
 
         do {
-          let places = try JSONDecoder().decode(RawPlaces.self, from: data)
-          completion(.success(places))
+          let rawPlaces = try JSONDecoder().decode(RawPlaces.self, from: data)
+
+          if let errorMessage = rawPlaces.error_message {
+            completion(.failure(.knownError(message: errorMessage)))
+            return
+          }
+
+          completion(.success(rawPlaces))
         } catch let jsonErr {
           print(jsonErr)
           completion(.failure(.invalidResponse))
@@ -67,7 +84,7 @@ class GoogleApiService: GoogleApiServiceProtocol {
           completion(.failure(.emptyData))
           return
         }
-        
+
         let decodedData = Data(base64Encoded: data.base64EncodedString(), options: [])
         if let data = decodedData {
           completion(.success(UIImage(data: data)))
@@ -87,4 +104,5 @@ class GoogleApiService: GoogleApiServiceProtocol {
 enum NetworkError: Error {
   case invalidResponse
   case emptyData
+  case knownError(message: String)
 }

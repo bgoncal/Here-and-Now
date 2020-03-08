@@ -51,7 +51,11 @@ class OnboardingViewModel {
 
 extension OnboardingViewModel: LocationServiceDelegate {
   func didChangeAuthorization(approved: Bool) {
-    locationAuthorized = approved
-    updateView()
+    if approved {
+      delegate?.didAuthorizedLocation()
+    } else {
+      locationAuthorized = approved
+      updateView()
+    }
   }
 }

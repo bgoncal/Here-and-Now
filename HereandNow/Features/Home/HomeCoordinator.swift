@@ -10,11 +10,13 @@ class HomeCoordinator {
     self.detailsCoordinator = detailsCoordinator
   }
 
+  @discardableResult
   func start() -> UIViewController {
     let homeViewController = ModuleBuilder<HomeViewController>.buildModule(coordinator: self as HomeViewModelDelegate)
     let navigationController = UINavigationController(rootViewController: homeViewController)
 
     if let rootViewController = rootViewController {
+      navigationController.modalPresentationStyle = .fullScreen
       rootViewController.present(navigationController, animated: true, completion: nil)
       self.rootViewController = navigationController
     } else {

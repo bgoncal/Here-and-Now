@@ -3,7 +3,12 @@ import Swinject
 
 class OnboardingCoordinator {
 
+  private let homeCoordinator: HomeCoordinator
   var rootViewController: UIViewController?
+
+  init(homeCoordinator: HomeCoordinator) {
+    self.homeCoordinator = homeCoordinator
+  }
 
   @discardableResult
   func start() -> UIViewController {
@@ -15,6 +20,7 @@ class OnboardingCoordinator {
 
 extension OnboardingCoordinator: OnboardingViewModelDelegate {
   func didAuthorizedLocation() {
-
+    homeCoordinator.rootViewController = rootViewController
+    homeCoordinator.start()
   }
 }

@@ -21,6 +21,7 @@ class DetailsViewController: UIViewController, DetailsViewControllerProtocol {
   override func viewDidLoad() {
     super.viewDidLoad()
     informationContainer.roundedCorners()
+    informationContainer.cardShadow()
     imageView.roundedCorners()
   }
 

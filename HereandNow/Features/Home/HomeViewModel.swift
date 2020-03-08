@@ -2,8 +2,10 @@ import Foundation
 
 struct HomeViewData {
   let places: [Place]
-  let segments: [String]
+  let segments: [PlaceType]
   let selectedSegmentIndex: Int
+  let showLoader: Bool
+  let showErrorState: Bool
 }
 
 protocol HomeViewControllerProtocol: class {
@@ -20,12 +22,11 @@ class HomeViewModel {
   private var locationService: LocationServiceProtocol
   private let apiService: GoogleApiServiceProtocol
   private var places: [Place] = []
-  private let segments = ["Bars", "Cafes", "Restaurants"]
-  private var currentCoordinate: Coordinate? {
-    didSet {
-      getPlaces()
-    }
-  }
+  private let segments: [PlaceType] = [.bar, .cafe, .restaurant]
+  private var currentSegment: PlaceType = .restaurant
+  private var currentSegmentIndex = 0
+  private var currentCoordinate: Coordinate?
+  private var needRefreshForLocation = false
 
   weak var delegate: HomeViewModelDelegate?
   weak var view: HomeViewControllerProtocol?
@@ -34,13 +35,11 @@ class HomeViewModel {
        apiService: GoogleApiServiceProtocol) {
     self.locationService = locationService
     self.apiService = apiService
-    self.locationService.delegate = self
   }
 
   func viewDidLoad() {
     locationService.requestLocation()
-    updateView()
-    getPlaces()
+    locationService.delegate = self
   }
 
   func didRefresh() {
@@ -51,22 +50,52 @@ class HomeViewModel {
     delegate?.didTapPlace(place)
   }
 
-  private func updateView() {
+  func didSelectSegment(index: Int) {
+    currentSegmentIndex = index
+    currentSegment = segments[index]
+    getPlaces()
+  }
+
+  func didTapTryAgain() {
+    getPlaces()
+  }
+
+  func didTapSortRatingAscending() {
+    places = places.sorted(by: { ($0.rating ?? 0.0) < ($1.rating ?? 0.0) })
+    updateView()
+  }
+
+  func didTapSortRatingDescending() {
+    places = places.sorted(by: { ($0.rating ?? 0.0) > ($1.rating ?? 0.0) })
+    updateView()
+  }
+
+  private func updateView(showLoader: Bool = false, showErrorState: Bool = false) {
     view?.viewData = HomeViewData(places: places,
                                   segments: segments,
-                                  selectedSegmentIndex: 0)
+                                  selectedSegmentIndex: currentSegmentIndex,
+                                  showLoader: showLoader,
+                                  showErrorState: showErrorState)
   }
 
   private func getPlaces() {
-    guard let coordinate = currentCoordinate else { return }
-    apiService.getPlaces(for: coordinate, type: .restaurant) { [weak self] result in
+    updateView(showLoader: true)
+
+    guard let coordinate = currentCoordinate else {
+      needRefreshForLocation = true
+      locationService.requestLocation()
+      return
+    }
+
+    apiService.getPlaces(for: coordinate, type: currentSegment) { [weak self] result in
+      guard let strongSelf = self else { return }
       switch result {
       case .success(let places):
-        self?.places = places.results
-      case .failure(let error):
-        print(error)
+        strongSelf.places = places.results
+        strongSelf.updateView(showLoader: false)
+      case .failure:
+        strongSelf.updateView(showLoader: false, showErrorState: true)
       }
-      self?.updateView()
     }
   }
 }
@@ -75,6 +104,7 @@ extension HomeViewModel: LocationServiceDelegate {
   func didUpdateLocations(locations: [Coordinate]) {
     if currentCoordinate == nil {
       currentCoordinate = locations.last
+      getPlaces()
     }
   }
 }

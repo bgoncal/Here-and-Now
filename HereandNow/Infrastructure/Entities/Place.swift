@@ -1,5 +1,6 @@
 struct RawPlaces: Codable {
   let results: [Place]
+  let error_message: String?
 }
 
 struct Place: Codable {
