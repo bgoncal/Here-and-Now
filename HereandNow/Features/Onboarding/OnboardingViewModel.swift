@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct OnboardingViewData {
+struct OnboardingViewData: Equatable {
   let locationAuthorized: Bool
   let permissionRequested: Bool
 }
@@ -56,9 +56,9 @@ extension OnboardingViewModel: LocationServiceDelegate {
   func didChangeAuthorization(approved: Bool) {
     if approved {
       delegate?.didAuthorizedLocation()
-    } else {
-      locationAuthorized = approved
-      updateView()
     }
+
+    locationAuthorized = approved
+    updateView()
   }
 }

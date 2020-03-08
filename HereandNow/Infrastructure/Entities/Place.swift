@@ -3,7 +3,7 @@ struct RawPlaces: Codable {
   let error_message: String?
 }
 
-struct Place: Codable {
+struct Place: Codable, Equatable {
   let id: String
   let name: String
   let rating: Float?
@@ -20,7 +20,7 @@ struct Place: Codable {
   }
 }
 
-struct RawOpeningHours: Codable {
+struct RawOpeningHours: Codable, Equatable {
   let open_now: Bool
 
   var readableValue: String {
@@ -28,15 +28,15 @@ struct RawOpeningHours: Codable {
   }
 }
 
-struct Photo: Codable {
+struct Photo: Codable, Equatable {
   let photo_reference: String
 }
 
-struct Geometry: Codable {
+struct Geometry: Codable, Equatable {
   let location: Location
 }
 
-struct Location: Codable {
+struct Location: Codable, Equatable {
   let lat: Double
   let lng: Double
 

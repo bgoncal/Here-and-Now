@@ -13,7 +13,7 @@
 		CF9A917124140A5D00F7CB9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9A916F24140A5D00F7CB9C /* Main.storyboard */; };
 		CF9A917324140A6000F7CB9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9A917224140A6000F7CB9C /* Assets.xcassets */; };
 		CF9A917624140A6000F7CB9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9A917424140A6000F7CB9C /* LaunchScreen.storyboard */; };
-		CF9A918124140A6000F7CB9C /* HereandNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A918024140A6000F7CB9C /* HereandNowTests.swift */; };
+		CF9A918124140A6000F7CB9C /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A918024140A6000F7CB9C /* OnboardingTests.swift */; };
 		CF9A918D241412C300F7CB9C /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A918C241412C300F7CB9C /* UIView+RoundedCorners.swift */; };
 		CF9A91902414141600F7CB9C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A918F2414141600F7CB9C /* LocationService.swift */; };
 		CF9A91942414199300F7CB9C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91932414199300F7CB9C /* OnboardingViewModel.swift */; };
@@ -46,6 +46,20 @@
 		CF9A91D5241538D100F7CB9C /* ErrorStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF9A91D4241538D100F7CB9C /* ErrorStateView.xib */; };
 		CF9A91D7241538E000F7CB9C /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91D6241538E000F7CB9C /* ErrorStateView.swift */; };
 		CF9A91DB2415420D00F7CB9C /* UINavigationBar+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91DA2415420D00F7CB9C /* UINavigationBar+Style.swift */; };
+		CF9A91DC241583D800F7CB9C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91932414199300F7CB9C /* OnboardingViewModel.swift */; };
+		CF9A91DD2415843800F7CB9C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91A72414294E00F7CB9C /* HomeViewModel.swift */; };
+		CF9A91DE2415843C00F7CB9C /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91C6241518CC00F7CB9C /* DetailsViewModel.swift */; };
+		CF9A91E0241584A800F7CB9C /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91DF241584A800F7CB9C /* MockLocationService.swift */; };
+		CF9A91E2241584D700F7CB9C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A918F2414141600F7CB9C /* LocationService.swift */; };
+		CF9A91E32415859500F7CB9C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BA24144FE500F7CB9C /* Place.swift */; };
+		CF9A91E42415859E00F7CB9C /* GoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B22414495300F7CB9C /* GoogleApiService.swift */; };
+		CF9A91E5241585A400F7CB9C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B42414498C00F7CB9C /* Configuration.swift */; };
+		CF9A91E7241586AE00F7CB9C /* OnboardingViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91E6241586AE00F7CB9C /* OnboardingViewMock.swift */; };
+		CF9A91E92415897000F7CB9C /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91E82415897000F7CB9C /* HomeTests.swift */; };
+		CF9A91EB241589AF00F7CB9C /* MockGoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91EA241589AF00F7CB9C /* MockGoogleApiService.swift */; };
+		CF9A91ED24158BA600F7CB9C /* MockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91EC24158BA600F7CB9C /* MockHomeView.swift */; };
+		CF9A91EF2415927000F7CB9C /* DetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91EE2415927000F7CB9C /* DetailsTests.swift */; };
+		CF9A91F1241592FE00F7CB9C /* MockDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91F0241592FE00F7CB9C /* MockDetailsView.swift */; };
 		E850E3374C0A965129E98C87 /* Pods_HereandNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B342E36F1B6D4147A98EBD55 /* Pods_HereandNow.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +87,7 @@
 		CF9A917524140A6000F7CB9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF9A917724140A6000F7CB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9A917C24140A6000F7CB9C /* HereandNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HereandNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF9A918024140A6000F7CB9C /* HereandNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereandNowTests.swift; sourceTree = "<group>"; };
+		CF9A918024140A6000F7CB9C /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		CF9A918224140A6000F7CB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9A918C241412C300F7CB9C /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		CF9A918F2414141600F7CB9C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -107,6 +121,13 @@
 		CF9A91D4241538D100F7CB9C /* ErrorStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorStateView.xib; sourceTree = "<group>"; };
 		CF9A91D6241538E000F7CB9C /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
 		CF9A91DA2415420D00F7CB9C /* UINavigationBar+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Style.swift"; sourceTree = "<group>"; };
+		CF9A91DF241584A800F7CB9C /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
+		CF9A91E6241586AE00F7CB9C /* OnboardingViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewMock.swift; sourceTree = "<group>"; };
+		CF9A91E82415897000F7CB9C /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
+		CF9A91EA241589AF00F7CB9C /* MockGoogleApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGoogleApiService.swift; sourceTree = "<group>"; };
+		CF9A91EC24158BA600F7CB9C /* MockHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeView.swift; sourceTree = "<group>"; };
+		CF9A91EE2415927000F7CB9C /* DetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTests.swift; sourceTree = "<group>"; };
+		CF9A91F0241592FE00F7CB9C /* MockDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailsView.swift; sourceTree = "<group>"; };
 		E699D570D1703FC626456A2B /* Pods-HereandNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereandNowTests.debug.xcconfig"; path = "Target Support Files/Pods-HereandNowTests/Pods-HereandNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,7 +210,10 @@
 		CF9A917F24140A6000F7CB9C /* HereandNowTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF9A918024140A6000F7CB9C /* HereandNowTests.swift */,
+				CF9A91E1241584AD00F7CB9C /* Mocks */,
+				CF9A918024140A6000F7CB9C /* OnboardingTests.swift */,
+				CF9A91E82415897000F7CB9C /* HomeTests.swift */,
+				CF9A91EE2415927000F7CB9C /* DetailsTests.swift */,
 				CF9A918224140A6000F7CB9C /* Info.plist */,
 			);
 			path = HereandNowTests;
@@ -334,6 +358,18 @@
 				CF9A91C92415319600F7CB9C /* Loader */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		CF9A91E1241584AD00F7CB9C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A91DF241584A800F7CB9C /* MockLocationService.swift */,
+				CF9A91E6241586AE00F7CB9C /* OnboardingViewMock.swift */,
+				CF9A91EA241589AF00F7CB9C /* MockGoogleApiService.swift */,
+				CF9A91EC24158BA600F7CB9C /* MockHomeView.swift */,
+				CF9A91F0241592FE00F7CB9C /* MockDetailsView.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,7 +581,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF9A918124140A6000F7CB9C /* HereandNowTests.swift in Sources */,
+				CF9A918124140A6000F7CB9C /* OnboardingTests.swift in Sources */,
+				CF9A91E7241586AE00F7CB9C /* OnboardingViewMock.swift in Sources */,
+				CF9A91E42415859E00F7CB9C /* GoogleApiService.swift in Sources */,
+				CF9A91EB241589AF00F7CB9C /* MockGoogleApiService.swift in Sources */,
+				CF9A91E0241584A800F7CB9C /* MockLocationService.swift in Sources */,
+				CF9A91E5241585A400F7CB9C /* Configuration.swift in Sources */,
+				CF9A91EF2415927000F7CB9C /* DetailsTests.swift in Sources */,
+				CF9A91DD2415843800F7CB9C /* HomeViewModel.swift in Sources */,
+				CF9A91DC241583D800F7CB9C /* OnboardingViewModel.swift in Sources */,
+				CF9A91F1241592FE00F7CB9C /* MockDetailsView.swift in Sources */,
+				CF9A91ED24158BA600F7CB9C /* MockHomeView.swift in Sources */,
+				CF9A91E2241584D700F7CB9C /* LocationService.swift in Sources */,
+				CF9A91E92415897000F7CB9C /* HomeTests.swift in Sources */,
+				CF9A91E32415859500F7CB9C /* Place.swift in Sources */,
+				CF9A91DE2415843C00F7CB9C /* DetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,7 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HereandNow.app/HereandNow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Here & Now.app/Here & Now";
 			};
 			name = Debug;
 		};
@@ -775,7 +825,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HereandNow.app/HereandNow";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Here & Now.app/Here & Now";
 			};
 			name = Release;
 		};

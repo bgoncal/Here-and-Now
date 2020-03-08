@@ -1,6 +1,6 @@
 import UIKit
 
-struct DetailsViewData {
+struct DetailsViewData: Equatable {
   let name: String
   let openNow: String
   let rating: String
@@ -11,10 +11,6 @@ struct DetailsViewData {
 protocol DetailsViewControllerProtocol: class {
   var viewModel: DetailsViewModel? { get set }
   var viewData: DetailsViewData? { get set }
-}
-
-protocol DetailsViewModelDelegate: class {
-
 }
 
 class DetailsViewModel {
@@ -28,7 +24,6 @@ class DetailsViewModel {
   }
 
   weak var view: DetailsViewControllerProtocol?
-  weak var delegate: DetailsViewModelDelegate?
 
   init(place: Place,
        apiService: GoogleApiServiceProtocol) {

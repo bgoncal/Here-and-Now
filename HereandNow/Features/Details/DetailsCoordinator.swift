@@ -9,8 +9,7 @@ class DetailsCoordinator {
   var rootViewController: UIViewController?
 
   func start(with place: Place) {
-    let detailsViewController = ModuleBuilder<DetailsViewController>.buildModule(context: DetailsContext(place: place),
-                                                                                 coordinator: self as DetailsViewModelDelegate)
+    let detailsViewController = ModuleBuilder<DetailsViewController>.buildModule(context: DetailsContext(place: place))
 
     if let navigationController = rootViewController as? UINavigationController {
       navigationController.pushViewController(detailsViewController, animated: true)
@@ -18,8 +17,4 @@ class DetailsCoordinator {
       rootViewController?.present(detailsViewController, animated: true, completion: nil)
     }
   }
-}
-
-extension DetailsCoordinator: DetailsViewModelDelegate {
- 
 }

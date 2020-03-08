@@ -1,6 +1,6 @@
 import Foundation
 
-struct HomeViewData {
+struct HomeViewData: Equatable {
   let places: [Place]
   let segments: [PlaceType]
   let selectedSegmentIndex: Int
@@ -40,7 +40,7 @@ class HomeViewModel {
   func viewDidLoad() {
     locationService.requestLocation()
     locationService.delegate = self
-    updateView(showLoader: true, showErrorState: false)
+    updateView(showLoader: true)
   }
 
   func didRefresh() {
