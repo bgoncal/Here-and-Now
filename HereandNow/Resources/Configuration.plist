@@ -5,7 +5,7 @@
 	<key>baseUrl</key>
 	<string>https://maps.googleapis.com/maps/api/</string>
 	<key>apiKey</key>
-	<string>AIzaSyDL0Y7gf6QR00Bvxf_Si6koZOhDLh8U9E0</string>
+	<string></string>
 	<key>nearbyPath</key>
 	<string>place/nearbysearch/</string>
 	<key>photo</key>
