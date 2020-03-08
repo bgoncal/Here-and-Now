@@ -73,7 +73,7 @@ extension LocationService: CLLocationManagerDelegate {
     let coordinates = locations.map { location -> Coordinate in
       let lat = String(location.coordinate.latitude)
       let long = String(location.coordinate.longitude)
-      return Coordinate(lat: lat, long: long)
+      return Coordinate(lat: lat, lng: long)
     }
     delegate?.didUpdateLocations(locations: coordinates)
   }

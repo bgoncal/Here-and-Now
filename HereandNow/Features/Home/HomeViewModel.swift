@@ -1,7 +1,9 @@
 import Foundation
 
 struct HomeViewData {
-  let cells: [Places]
+  let places: [Place]
+  let segments: [String]
+  let selectedSegmentIndex: Int
 }
 
 protocol HomeViewControllerProtocol: class {
@@ -10,14 +12,15 @@ protocol HomeViewControllerProtocol: class {
 }
 
 protocol HomeViewModelDelegate: class {
-
+  func didTapPlace(_ place: Place)
 }
 
 class HomeViewModel {
 
   private var locationService: LocationServiceProtocol
   private let apiService: GoogleApiServiceProtocol
-  private var places: [Places] = []
+  private var places: [Place] = []
+  private let segments = ["Bars", "Cafes", "Restaurants"]
   private var currentCoordinate: Coordinate? {
     didSet {
       getPlaces()
@@ -40,22 +43,30 @@ class HomeViewModel {
     getPlaces()
   }
 
+  func didRefresh() {
+    getPlaces()
+  }
+
+  func didTapPlace(_ place: Place) {
+    delegate?.didTapPlace(place)
+  }
+
   private func updateView() {
-    view?.viewData = HomeViewData(cells: places)
+    view?.viewData = HomeViewData(places: places,
+                                  segments: segments,
+                                  selectedSegmentIndex: 0)
   }
 
   private func getPlaces() {
     guard let coordinate = currentCoordinate else { return }
     apiService.getPlaces(for: coordinate, type: .restaurant) { [weak self] result in
-      DispatchQueue.main.async {
-        switch result {
-        case .success(let places):
-          self?.places = places.results
-        case .failure(let error):
-          print(error)
-        }
-        self?.updateView()
+      switch result {
+      case .success(let places):
+        self?.places = places.results
+      case .failure(let error):
+        print(error)
       }
+      self?.updateView()
     }
   }
 }

@@ -8,5 +8,7 @@
 	<string>AIzaSyCMIvsHIfke0zA0YGgjXXzkoje9qTZHzT0</string>
 	<key>nearbyPath</key>
 	<string>place/nearbysearch/</string>
+	<key>photo</key>
+	<string>place/photo?</string>
 </dict>
 </plist>

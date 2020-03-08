@@ -60,6 +60,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="openNow" destination="SIS-cC-rSr" id="ehE-GQ-ckw"/>
+                <outlet property="placeName" destination="Iet-1G-ISR" id="qe6-Mk-8NO"/>
+                <outlet property="ratingLabel" destination="SIS-cC-rSr" id="fsD-oc-rzl"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="178.125"/>
         </tableViewCell>
     </objects>

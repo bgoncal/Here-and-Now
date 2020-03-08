@@ -1,0 +1,25 @@
+import UIKit
+
+struct DetailsContext {
+  let place: Place
+}
+
+class DetailsCoordinator {
+
+  var rootViewController: UIViewController?
+
+  func start(with place: Place) {
+    let detailsViewController = ModuleBuilder<DetailsViewController>.buildModule(context: DetailsContext(place: place),
+                                                                                 coordinator: self as DetailsViewModelDelegate)
+
+    if let navigationController = rootViewController as? UINavigationController {
+      navigationController.pushViewController(detailsViewController, animated: true)
+    } else {
+      rootViewController?.present(detailsViewController, animated: true, completion: nil)
+    }
+  }
+}
+
+extension DetailsCoordinator: DetailsViewModelDelegate {
+ 
+}

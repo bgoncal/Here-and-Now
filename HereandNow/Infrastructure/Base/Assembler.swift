@@ -10,7 +10,8 @@ class Assembler {
       AppCoordinatorAssembly(),
       OnboardingAssembly(),
       HomeAssembly(),
-      ServicesAssembly()
+      ServicesAssembly(),
+      DetailsAssembly()
     ]
 
     shared = Swinject.Assembler(assemblies)

@@ -33,8 +33,12 @@
 		CF9A91B32414495300F7CB9C /* GoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B22414495300F7CB9C /* GoogleApiService.swift */; };
 		CF9A91B52414498C00F7CB9C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91B42414498C00F7CB9C /* Configuration.swift */; };
 		CF9A91B8241449C100F7CB9C /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF9A91B7241449C100F7CB9C /* Configuration.plist */; };
-		CF9A91BB24144FE500F7CB9C /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BA24144FE500F7CB9C /* Places.swift */; };
+		CF9A91BB24144FE500F7CB9C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BA24144FE500F7CB9C /* Place.swift */; };
 		CF9A91BD241454C700F7CB9C /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91BC241454C700F7CB9C /* ServicesAssembly.swift */; };
+		CF9A91C12415161E00F7CB9C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91C02415161E00F7CB9C /* DetailsViewController.swift */; };
+		CF9A91C32415174800F7CB9C /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91C22415174800F7CB9C /* DetailsCoordinator.swift */; };
+		CF9A91C52415179B00F7CB9C /* DetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91C42415179B00F7CB9C /* DetailsAssembly.swift */; };
+		CF9A91C7241518CC00F7CB9C /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9A91C6241518CC00F7CB9C /* DetailsViewModel.swift */; };
 		E850E3374C0A965129E98C87 /* Pods_HereandNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B342E36F1B6D4147A98EBD55 /* Pods_HereandNow.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,8 +87,12 @@
 		CF9A91B22414495300F7CB9C /* GoogleApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleApiService.swift; sourceTree = "<group>"; };
 		CF9A91B42414498C00F7CB9C /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CF9A91B7241449C100F7CB9C /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
-		CF9A91BA24144FE500F7CB9C /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		CF9A91BA24144FE500F7CB9C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		CF9A91BC241454C700F7CB9C /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		CF9A91C02415161E00F7CB9C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		CF9A91C22415174800F7CB9C /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
+		CF9A91C42415179B00F7CB9C /* DetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAssembly.swift; sourceTree = "<group>"; };
+		CF9A91C6241518CC00F7CB9C /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		E699D570D1703FC626456A2B /* Pods-HereandNowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereandNowTests.debug.xcconfig"; path = "Target Support Files/Pods-HereandNowTests/Pods-HereandNowTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +206,7 @@
 				CF9A919824141F4A00F7CB9C /* AppCoordinator.swift */,
 				CF9A919A2414207000F7CB9C /* AppCoordinatorAssembly.swift */,
 				CF9A91A42414290900F7CB9C /* Home */,
+				CF9A91BF2415160600F7CB9C /* Details */,
 				CF9A91922414198300F7CB9C /* Onboarding */,
 			);
 			path = Features;
@@ -217,11 +226,9 @@
 		CF9A919524141E4700F7CB9C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				CF9A91BE2415155700F7CB9C /* Base */,
 				CF9A91B924144FD900F7CB9C /* Entities */,
 				CF9A918E2414140800F7CB9C /* Services */,
-				CF9A919624141E5700F7CB9C /* Assembler.swift */,
-				CF9A91A22414269200F7CB9C /* ModuleBuilder.swift */,
-				CF9A91B42414498C00F7CB9C /* Configuration.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -258,9 +265,30 @@
 		CF9A91B924144FD900F7CB9C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				CF9A91BA24144FE500F7CB9C /* Places.swift */,
+				CF9A91BA24144FE500F7CB9C /* Place.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		CF9A91BE2415155700F7CB9C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A919624141E5700F7CB9C /* Assembler.swift */,
+				CF9A91A22414269200F7CB9C /* ModuleBuilder.swift */,
+				CF9A91B42414498C00F7CB9C /* Configuration.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CF9A91BF2415160600F7CB9C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A91C02415161E00F7CB9C /* DetailsViewController.swift */,
+				CF9A91C6241518CC00F7CB9C /* DetailsViewModel.swift */,
+				CF9A91C22415174800F7CB9C /* DetailsCoordinator.swift */,
+				CF9A91C42415179B00F7CB9C /* DetailsAssembly.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,9 +461,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF9A91BB24144FE500F7CB9C /* Places.swift in Sources */,
+				CF9A91BB24144FE500F7CB9C /* Place.swift in Sources */,
 				CF9A91942414199300F7CB9C /* OnboardingViewModel.swift in Sources */,
 				CF9A918D241412C300F7CB9C /* UIView+RoundedCorners.swift in Sources */,
+				CF9A91C12415161E00F7CB9C /* DetailsViewController.swift in Sources */,
+				CF9A91C32415174800F7CB9C /* DetailsCoordinator.swift in Sources */,
 				CF9A916E24140A5D00F7CB9C /* OnboardingViewController.swift in Sources */,
 				CF9A91B52414498C00F7CB9C /* Configuration.swift in Sources */,
 				CF9A91902414141600F7CB9C /* LocationService.swift in Sources */,
@@ -443,8 +473,10 @@
 				CF9A919B2414207000F7CB9C /* AppCoordinatorAssembly.swift in Sources */,
 				CF9A919724141E5700F7CB9C /* Assembler.swift in Sources */,
 				CF9A919D241421E000F7CB9C /* OnboardingAssembly.swift in Sources */,
+				CF9A91C7241518CC00F7CB9C /* DetailsViewModel.swift in Sources */,
 				CF9A91A1241424F500F7CB9C /* OnboardingCoordinator.swift in Sources */,
 				CF9A91A82414294E00F7CB9C /* HomeViewModel.swift in Sources */,
+				CF9A91C52415179B00F7CB9C /* DetailsAssembly.swift in Sources */,
 				CF9A916A24140A5D00F7CB9C /* AppDelegate.swift in Sources */,
 				CF9A91BD241454C700F7CB9C /* ServicesAssembly.swift in Sources */,
 				CF9A919924141F4A00F7CB9C /* AppCoordinator.swift in Sources */,
