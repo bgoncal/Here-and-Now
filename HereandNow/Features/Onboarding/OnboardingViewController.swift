@@ -37,7 +37,8 @@ class OnboardingViewController: UIViewController, OnboardingViewControllerProtoc
     viewModel?.didTapManualSearch()
   }
 
-  @IBAction func didTapOpeniPhoneSettings(_ sender: Any) {    viewModel?.didTapOpeniPhoneSettings()
+  @IBAction func didTapOpeniPhoneSettings(_ sender: Any) {
+    viewModel?.didTapOpeniPhoneSettings()
   }
 
   private func updateView(with viewData: OnboardingViewData) {

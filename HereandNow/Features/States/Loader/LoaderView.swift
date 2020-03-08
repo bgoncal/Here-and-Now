@@ -1,6 +1,3 @@
 import UIKit
 
-class LoaderView: UIView {
-
-
-}
+class LoaderView: UIView {}

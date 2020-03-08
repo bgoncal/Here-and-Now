@@ -17,7 +17,7 @@ enum PlaceType: String {
   var readableValue: String {
     switch self {
     case .bar:
-      return "Bar"
+      return "Bars"
     case .cafe:
       return "Cafes"
     case .restaurant:
