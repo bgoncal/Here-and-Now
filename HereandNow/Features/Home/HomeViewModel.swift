@@ -40,6 +40,7 @@ class HomeViewModel {
   func viewDidLoad() {
     locationService.requestLocation()
     locationService.delegate = self
+    updateView(showLoader: true, showErrorState: false)
   }
 
   func didRefresh() {

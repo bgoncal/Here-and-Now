@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct OnboardingViewData {
   let locationAuthorized: Bool
@@ -12,6 +13,8 @@ protocol OnboardingViewControllerProtocol: class {
 
 protocol OnboardingViewModelDelegate: class {
   func didAuthorizedLocation()
+  func didTapOpeniPhoneSettings()
+  func didTapManualSearch()
 }
 
 class OnboardingViewModel {
@@ -27,7 +30,7 @@ class OnboardingViewModel {
     self.locationService.delegate = self
   }
 
-  func viewDidLoad() {
+  func viewDidAppear() {
     updateView()
   }
 
@@ -36,11 +39,11 @@ class OnboardingViewModel {
   }
 
   func didTapManualSearch() {
-
+    delegate?.didTapManualSearch()
   }
 
   func didTapOpeniPhoneSettings() {
-    
+    delegate?.didTapOpeniPhoneSettings()
   }
 
   private func updateView() {

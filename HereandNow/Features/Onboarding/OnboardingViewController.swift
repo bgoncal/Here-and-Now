@@ -18,7 +18,11 @@ class OnboardingViewController: UIViewController, OnboardingViewControllerProtoc
     super.viewDidLoad()
     allowButtonContainer.roundedCorners()
     iPhoneSettingsContainer.roundedCorners()
-    viewModel?.viewDidLoad()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    viewModel?.viewDidAppear()
   }
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
